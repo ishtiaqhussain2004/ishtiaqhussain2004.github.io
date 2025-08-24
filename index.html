@@ -11,9 +11,14 @@
       --primary: #263159;
       --secondary: #f5f6fa;
       --accent: #fdcb52;
-      --text: #333;
+      --text: #222a37;
       --muted: #888;
       --card-bg: #fff;
+      --linkedin: #0a66c2;
+      --whatsapp: #25d366;
+      --email: #e14a3b;
+      --resume: #5e60ce;
+      --project: #f48c06;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -78,46 +83,107 @@
       margin: 0 auto;
       padding: 2rem 1rem;
     }
-    /* Home Section */
-    .home-card {
+    /* Name and Profession Section */
+    .identity-card {
+      background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 100%);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.14);
+      padding: 2rem 2rem 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .identity-card h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .identity-card h2 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    /* Contact Buttons Section */
+    .contact-row {
+      display: flex;
+      gap: 1.3rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--primary);
+      font-size: 1.3rem;
+      box-shadow: 0 1px 8px rgba(38,49,89,0.13);
+      transition: box-shadow 0.2s, transform 0.15s, background 0.2s, color 0.2s;
+      text-decoration: none;
+      border: 2px solid transparent;
+      outline: none;
+      position: relative;
+    }
+    .contact-btn span {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(38,49,89,0.93);
+      color: #fff;
+      font-size: 0.83rem;
+      padding: 1px 8px 2px 8px;
+      border-radius: 7px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    .contact-btn:hover span { opacity: 1; }
+    .btn-linkedin { border-color: var(--linkedin); color: var(--linkedin);}
+    .btn-linkedin:hover { background: var(--linkedin); color: #fff; }
+    .btn-whatsapp { border-color: var(--whatsapp); color: var(--whatsapp);}
+    .btn-whatsapp:hover { background: var(--whatsapp); color: #fff; }
+    .btn-resume { border-color: var(--resume); color: var(--resume);}
+    .btn-resume:hover { background: var(--resume); color: #fff; }
+    .btn-project { border-color: var(--project); color: var(--project);}
+    .btn-project:hover { background: var(--project); color: #fff; }
+    .btn-email { border-color: var(--email); color: var(--email);}
+    .btn-email:hover { background: var(--email); color: #fff; }
+    /* About Me Section */
+    .about-card {
       background: var(--card-bg);
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba(38,49,89,0.07);
-      padding: 2.5rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
+      padding: 2.2rem 2rem 1.7rem 2rem;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid var(--accent);
     }
-    .profile-pic img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid var(--primary);
-      box-shadow: 0 2px 8px rgba(38,49,89,0.1);
-      margin-bottom: 1rem;
-      background: #eee;
-    }
-    .home-info h1 {
+    .about-card h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 0.4rem;
-      letter-spacing: 1px;
-    }
-    .home-info h2 {
-      font-size: 1.1rem;
-      color: var(--accent);
+      font-size: 1.2rem;
       margin-bottom: 1rem;
-      text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .home-info p {
-      font-size: 1rem;
+    .about-card p {
       color: var(--text);
-      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
     /* Section Headings */
     .section-title {
@@ -139,7 +205,7 @@
     .skill-card {
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
       padding: 1.2rem 1rem;
       transition: box-shadow 0.2s;
       border-left: 4px solid var(--accent);
@@ -155,6 +221,7 @@
       list-style-type: disc;
       padding-left: 1.2rem;
       color: var(--text);
+      font-size: 0.98rem;
     }
     /* Projects Section */
     .projects-section {
@@ -163,7 +230,7 @@
     .projects-card {
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
       padding: 1.5rem 1rem;
       text-align: center;
       color: var(--muted);
@@ -175,7 +242,7 @@
       background: var(--card-bg);
       padding: 1.2rem 1rem;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
       margin-bottom: 1.2rem;
       border-left: 4px solid var(--accent);
     }
@@ -195,7 +262,7 @@
       background: var(--card-bg);
       padding: 1.2rem 1rem;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
       margin-bottom: 1.2rem;
       border-left: 4px solid var(--accent);
     }
@@ -213,22 +280,21 @@
       padding: 1.2rem 0;
       margin-top: 3rem;
       font-size: 1rem;
+      letter-spacing: 1px;
     }
+    /* Responsive */
     @media (max-width: 900px) {
-      .home-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        padding: 2rem 1rem;
-      }
       .container {
-        padding: 1.5rem 0.5rem;
+        padding: 1.3rem 0.5rem;
       }
       .navbar-container {
         padding: 1rem 1rem;
       }
+      .identity-card, .about-card {
+        padding: 1.5rem 1rem 1rem 1rem;
+      }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .skills-grid {
         grid-template-columns: 1fr;
       }
@@ -237,15 +303,11 @@
         padding-left: 0.6rem;
         border-left-width: 4px;
       }
-      .profile-pic img {
-        width: 90px;
-        height: 90px;
-      }
-      .home-info h1 {
-        font-size: 1.15rem;
-      }
+      .identity-card h1 { font-size: 1.25rem;}
     }
   </style>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
   <!-- Navbar -->
@@ -263,22 +325,59 @@
   </nav>
 
   <div class="container">
-    <!-- Home Section -->
-    <section id="home">
-      <div class="home-card">
-        <div class="profile-pic">
-          <img src="https://avatars.githubusercontent.com/u/162943797?v=4" alt="Ishtiaq Hussain" />
+    <!-- Name and Profession Section -->
+    <section>
+      <div class="identity-card">
+        <h1>Ishtiaq Hussain</h1>
+        <h2>SEO and Meta Ads Specialist</h2>
+        <div class="contact-row">
+          <a class="contact-btn btn-linkedin" href="https://www.linkedin.com/in/ishtiaqhussain2004" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a class="contact-btn btn-whatsapp" 
+             href="https://wa.me/923073196289" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a class="contact-btn btn-resume" href="#" title="Resume" download>
+            <i class="fas fa-file-alt"></i>
+            <span>Resume</span>
+          </a>
+          <a class="contact-btn btn-project" href="#projects" title="Projects">
+            <i class="fas fa-briefcase"></i>
+            <span>Projects</span>
+          </a>
+          <a class="contact-btn btn-email" href="mailto:ishtiaqmalik2004@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
         </div>
-        <div class="home-info">
-          <h1>Name: Ishtiaq Hussain</h1>
-          <h2>Profession: SEO and Meta Ads Specialist</h2>
-          <p>
-            <strong>About Me</strong><br>
-            Name: Ishtiaq Hussain<br>
-            I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
-            Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
-          </p>
+        <div style="margin-top:0.2rem; font-size:0.99rem;">
+          <span style="color:#fff; margin-right:18px;">
+            <i class="fab fa-linkedin-in" style="color:var(--linkedin);"></i> 
+            <a href="https://www.linkedin.com/in/ishtiaqhussain2004" style="color:var(--accent);text-decoration:underline;" target="_blank">LinkedIn</a>
+          </span>
+          <span style="color:#fff; margin-right:18px;">
+            <i class="fas fa-envelope" style="color:var(--email);"></i>
+            <a href="mailto:ishtiaqmalik2004@gmail.com" style="color:var(--accent);text-decoration:underline;">ishtiaqmalik2004@gmail.com</a>
+          </span>
+          <span style="color:#fff;">
+            <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i>
+            <a href="https://wa.me/923073196289" style="color:var(--accent);text-decoration:underline;" target="_blank">0307-3196289</a>
+          </span>
         </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+      <div class="about-card">
+        <h2>About Me</h2>
+        <p>
+          I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
+          Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
+        </p>
       </div>
     </section>
     
