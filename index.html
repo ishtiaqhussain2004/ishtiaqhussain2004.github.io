@@ -6,7 +6,227 @@
   <meta name="description" content="Ishtiaq Hussain - SEO and Meta Ads Specialist Portfolio">
   <title>Ishtiaq Hussain | SEO & Meta Ads Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary: #263159;
+      --secondary: #f5f6fa;
+      --accent: #fdcb52;
+      --text: #333;
+      --muted: #888;
+      --card-bg: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .navbar {
+      background: var(--primary);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.08);
+    }
+    .navbar-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s;
+      margin-top: 3px;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .main-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem 2rem;
+    }
+    .home-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .profile-pic img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--primary);
+      box-shadow: 0 2px 8px rgba(38,49,89,0.1);
+      margin-bottom: 1rem;
+    }
+    .home-details h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+      letter-spacing: 1px;
+    }
+    .home-details h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .home-details p {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    section {
+      margin-top: 2.5rem;
+    }
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 1rem;
+      letter-spacing: 1px;
+    }
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      padding: 1.2rem 1rem;
+      margin-bottom: 1rem;
+      transition: box-shadow 0.2s;
+    }
+    .skill-card h3 {
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .skill-card ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      color: var(--text);
+    }
+    /* Projects */
+    .projects-placeholder {
+      padding: 1.5rem 0;
+      color: var(--muted);
+      font-style: italic;
+      background: var(--card-bg);
+      border-radius: 10px;
+      text-align: center;
+    }
+    /* Certification & Education */
+    .cert-card, .edu-card {
+      background: var(--card-bg);
+      padding: 1.2rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      margin-bottom: 1.2rem;
+    }
+    .cert-card h3, .edu-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-size: 1.13rem;
+      font-weight: 700;
+    }
+    .cert-card p, .edu-card p {
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem 0;
+      margin-top: 3rem;
+      font-size: 1rem;
+    }
+    @media (max-width: 900px) {
+      .home-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem 1rem;
+      }
+      .main-section {
+        padding: 2rem 1rem;
+      }
+      .navbar-container {
+        padding: 1rem 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      section h2 {
+        font-size: 1.15rem;
+        padding-left: 0.6rem;
+        border-left-width: 4px;
+      }
+      .profile-pic img {
+        width: 95px;
+        height: 95px;
+      }
+      .home-details h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -23,107 +243,109 @@
     </div>
   </nav>
 
-  <!-- Home Section -->
-  <section class="home-section" id="home">
-    <div class="home-content">
+  <div class="main-section">
+    <!-- Home Section -->
+    <section class="home-section" id="home">
       <div class="profile-pic">
-        <!-- You can add your profile image here -->
+        <!-- Add your image if you want -->
         <img src="https://avatars.githubusercontent.com/u/162943797?v=4" alt="Ishtiaq Hussain" />
       </div>
-      <div>
-        <h1>Ishtiaq Hussain</h1>
-        <h2>SEO and Meta Ads Specialist</h2>
+      <div class="home-details">
+        <h1>Name: Ishtiaq Hussain</h1>
+        <h2>Profession: SEO and Meta Ads Specialist</h2>
         <p>
+          <strong>About Me</strong><br>
+          Name: Ishtiaq Hussain<br>
           I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
           Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>SEO Tools & Platforms</h3>
+          <ul>
+            <li>Google Search Console</li>
+            <li>SEMrush</li>
+            <li>Ahrefs</li>
+            <li>Screaming Frog</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Digital Marketing & Ads</h3>
+          <ul>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>Facebook Business Manager</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Social Media & Content</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>LinkedIn</li>
+            <li>Content Strategy & Optimization</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Strategy & Analysis</h3>
+          <ul>
+            <li>Keyword Research & Planning</li>
+            <li>On-Page & Off-Page SEO</li>
+            <li>Technical SEO Audits</li>
+            <li>Competitor Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Analytics & Insights</h3>
+          <ul>
+            <li>Google Analytics</li>
+            <li>Meta Insights</li>
+            <li>SEO Performance Reporting</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section class="skills-section" id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>SEO Tools & Platforms</h3>
-        <ul>
-          <li>Google Search Console</li>
-          <li>SEMrush</li>
-          <li>Ahrefs</li>
-          <li>Screaming Frog</li>
-        </ul>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-placeholder">
+        <p>Currently no projects to display.</p>
       </div>
-      <div class="skill-card">
-        <h3>Digital Marketing & Ads</h3>
-        <ul>
-          <li>Google Ads</li>
-          <li>Meta Ads</li>
-          <li>Facebook Business Manager</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Social Media & Content</h3>
-        <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>LinkedIn</li>
-          <li>Content Strategy & Optimization</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Strategy & Analysis</h3>
-        <ul>
-          <li>Keyword Research & Planning</li>
-          <li>On-Page & Off-Page SEO</li>
-          <li>Technical SEO Audits</li>
-          <li>Competitor Analysis</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Analytics & Insights</h3>
-        <ul>
-          <li>Google Analytics</li>
-          <li>Meta Insights</li>
-          <li>SEO Performance Reporting</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section class="projects-section" id="projects">
-    <h2>Projects</h2>
-    <div class="projects-placeholder">
-      <p>Currently no projects to display.</p>
-    </div>
-  </section>
+    <!-- Certification Section -->
+    <section id="certification">
+      <h2>Certification</h2>
+      <div class="cert-card">
+        <h3>Asian Academy Abbottabad</h3>
+        <p><strong>Jan 2024 - June 2024</strong></p>
+        <p><strong>Grade:</strong> A+</p>
+        <p>
+          I have developed a strong foundation in digital marketing, with a primary focus on Search Engine Optimization (SEO) and Meta Ads.<br>
+          My SEO expertise includes extensive keyword research, on-page optimization, and analytics-driven strategies to enhance organic visibility and drive targeted traffic.<br>
+          Additionally, I have hands-on experience in creating and managing Meta Ads campaigns, targeting capabilities to reach specific audiences effectively.<br>
+          I am passionate about staying updated with the latest trends and best practices in digital marketing, enabling me to deliver measurable results and maximize ROI for businesses.<br>
+          My combined skills make me a valuable asset in the digital marketing landscape.
+        </p>
+      </div>
+    </section>
 
-  <!-- Certification Section -->
-  <section class="certification-section" id="certification">
-    <h2>Certification</h2>
-    <div class="cert-card">
-      <h3>Asian Academy Abbottabad</h3>
-      <p><strong>Jan 2024 - June 2024</strong></p>
-      <p><strong>Grade:</strong> A+</p>
-      <p>
-        I have developed a strong foundation in digital marketing, with a primary focus on Search Engine Optimization (SEO) and Meta Ads.<br>
-        My SEO expertise includes extensive keyword research, on-page optimization, and analytics-driven strategies to enhance organic visibility and drive targeted traffic.<br>
-        Additionally, I have hands-on experience in creating and managing Meta Ads campaigns, targeting capabilities to reach specific audiences effectively.<br>
-        I am passionate about staying updated with the latest trends and best practices in digital marketing, enabling me to deliver measurable results and maximize ROI for businesses.<br>
-        My combined skills make me a valuable asset in the digital marketing landscape.
-      </p>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="education-section" id="education">
-    <h2>Education</h2>
-    <div class="edu-card">
-      <h3>Asian Academy Abbottabad</h3>
-      <p>SEO and Meta Ads Specialist</p>
-    </div>
-  </section>
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu-card">
+        <h3>Asian Academy Abbottabad</h3>
+        <p>SEO and Meta Ads Specialist</p>
+      </div>
+    </section>
+  </div>
 
   <!-- Footer -->
   <footer>
