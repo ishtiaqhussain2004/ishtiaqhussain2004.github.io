@@ -15,11 +15,7 @@
       --muted: #888;
       --card-bg: #fff;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Open Sans', Arial, sans-serif;
       background: var(--secondary);
@@ -77,54 +73,54 @@
     .nav-links a:hover::after {
       width: 100%;
     }
-    .main-section {
+    .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 4rem 2rem 2rem 2rem;
+      padding: 2rem 1rem;
     }
-    .home-section {
+    /* Home Section */
+    .home-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.07);
+      padding: 2.5rem 2rem;
       display: flex;
       align-items: center;
-      gap: 3rem;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
-      padding: 3rem;
-      margin-bottom: 2rem;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
       flex-wrap: wrap;
     }
     .profile-pic img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 50%;
       border: 6px solid var(--primary);
       box-shadow: 0 2px 8px rgba(38,49,89,0.1);
       margin-bottom: 1rem;
+      background: #eee;
     }
-    .home-details h1 {
+    .home-info h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.1rem;
+      font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.4rem;
       letter-spacing: 1px;
     }
-    .home-details h2 {
+    .home-info h2 {
       font-size: 1.1rem;
       color: var(--accent);
       margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .home-details p {
+    .home-info p {
       font-size: 1rem;
       color: var(--text);
       margin-bottom: 0.4rem;
     }
-    section {
-      margin-top: 2.5rem;
-    }
-    section h2 {
+    /* Section Headings */
+    .section-title {
       font-family: 'Montserrat', sans-serif;
       color: var(--primary);
       font-size: 1.5rem;
@@ -133,58 +129,81 @@
       padding-left: 1rem;
       letter-spacing: 1px;
     }
-    /* Skills */
+    /* Skills Section */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 2rem;
     }
     .skill-card {
       background: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(38,49,89,0.05);
       padding: 1.2rem 1rem;
-      margin-bottom: 1rem;
       transition: box-shadow 0.2s;
+      border-left: 4px solid var(--accent);
     }
     .skill-card h3 {
-      color: var(--accent);
-      font-size: 1.05rem;
-      margin-bottom: 0.7rem;
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
     .skill-card ul {
       list-style-type: disc;
       padding-left: 1.2rem;
       color: var(--text);
     }
-    /* Projects */
-    .projects-placeholder {
-      padding: 1.5rem 0;
+    /* Projects Section */
+    .projects-section {
+      margin-bottom: 2rem;
+    }
+    .projects-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      padding: 1.5rem 1rem;
+      text-align: center;
       color: var(--muted);
       font-style: italic;
-      background: var(--card-bg);
-      border-radius: 10px;
-      text-align: center;
+      border-left: 4px solid var(--accent);
     }
-    /* Certification & Education */
-    .cert-card, .edu-card {
+    /* Certification Section */
+    .cert-card {
       background: var(--card-bg);
       padding: 1.2rem 1rem;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(38,49,89,0.05);
       margin-bottom: 1.2rem;
+      border-left: 4px solid var(--accent);
     }
-    .cert-card h3, .edu-card h3 {
+    .cert-card h3 {
       color: var(--primary);
       margin-bottom: 0.3rem;
       font-size: 1.13rem;
       font-weight: 700;
     }
-    .cert-card p, .edu-card p {
+    .cert-card p {
       color: var(--text);
       margin-bottom: 0.3rem;
       font-size: 1rem;
+    }
+    /* Education Section */
+    .edu-card {
+      background: var(--card-bg);
+      padding: 1.2rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.05);
+      margin-bottom: 1.2rem;
+      border-left: 4px solid var(--accent);
+    }
+    .edu-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
     }
     /* Footer */
     footer {
@@ -196,14 +215,14 @@
       font-size: 1rem;
     }
     @media (max-width: 900px) {
-      .home-section {
+      .home-card {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 1.5rem;
         padding: 2rem 1rem;
       }
-      .main-section {
-        padding: 2rem 1rem;
+      .container {
+        padding: 1.5rem 0.5rem;
       }
       .navbar-container {
         padding: 1rem 1rem;
@@ -213,17 +232,17 @@
       .skills-grid {
         grid-template-columns: 1fr;
       }
-      section h2 {
-        font-size: 1.15rem;
+      .section-title {
+        font-size: 1.13rem;
         padding-left: 0.6rem;
         border-left-width: 4px;
       }
       .profile-pic img {
-        width: 95px;
-        height: 95px;
+        width: 90px;
+        height: 90px;
       }
-      .home-details h1 {
-        font-size: 1.3rem;
+      .home-info h1 {
+        font-size: 1.15rem;
       }
     }
   </style>
@@ -243,28 +262,29 @@
     </div>
   </nav>
 
-  <div class="main-section">
+  <div class="container">
     <!-- Home Section -->
-    <section class="home-section" id="home">
-      <div class="profile-pic">
-        <!-- Add your image if you want -->
-        <img src="https://avatars.githubusercontent.com/u/162943797?v=4" alt="Ishtiaq Hussain" />
-      </div>
-      <div class="home-details">
-        <h1>Name: Ishtiaq Hussain</h1>
-        <h2>Profession: SEO and Meta Ads Specialist</h2>
-        <p>
-          <strong>About Me</strong><br>
-          Name: Ishtiaq Hussain<br>
-          I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
-          Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
-        </p>
+    <section id="home">
+      <div class="home-card">
+        <div class="profile-pic">
+          <img src="https://avatars.githubusercontent.com/u/162943797?v=4" alt="Ishtiaq Hussain" />
+        </div>
+        <div class="home-info">
+          <h1>Name: Ishtiaq Hussain</h1>
+          <h2>Profession: SEO and Meta Ads Specialist</h2>
+          <p>
+            <strong>About Me</strong><br>
+            Name: Ishtiaq Hussain<br>
+            I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
+            Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
+          </p>
+        </div>
       </div>
     </section>
     
     <!-- Skills Section -->
     <section id="skills">
-      <h2>Technical Skills</h2>
+      <div class="section-title">Technical Skills</div>
       <div class="skills-grid">
         <div class="skill-card">
           <h3>SEO Tools & Platforms</h3>
@@ -313,16 +333,16 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-placeholder">
-        <p>Currently no projects to display.</p>
+    <section id="projects" class="projects-section">
+      <div class="section-title">Projects</div>
+      <div class="projects-card">
+        Currently no projects to display.
       </div>
     </section>
 
     <!-- Certification Section -->
     <section id="certification">
-      <h2>Certification</h2>
+      <div class="section-title">Certification</div>
       <div class="cert-card">
         <h3>Asian Academy Abbottabad</h3>
         <p><strong>Jan 2024 - June 2024</strong></p>
@@ -339,7 +359,7 @@
 
     <!-- Education Section -->
     <section id="education">
-      <h2>Education</h2>
+      <div class="section-title">Education</div>
       <div class="edu-card">
         <h3>Asian Academy Abbottabad</h3>
         <p>SEO and Meta Ads Specialist</p>
