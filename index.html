@@ -1,78 +1,135 @@
-:root {
-  --bg: #0b0f17;
-  --panel: #101625;
-  --text: #e8ecf1;
-  --muted: #b7c0cc;
-  --accent: #6ee7ff;
-  --accent-2: #a78bfa;
-  --radius: 16px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ishtiaq Hussain - SEO and Meta Ads Specialist Portfolio">
+  <title>Ishtiaq Hussain | SEO & Meta Ads Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <span class="logo">Ishtiaq Hussain</span>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certification">Certification</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </div>
+  </nav>
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 10% -10%, #12203a 0%, transparent 60%) no-repeat, var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+  <!-- Home Section -->
+  <section class="home-section" id="home">
+    <div class="home-content">
+      <div class="profile-pic">
+        <!-- You can add your profile image here -->
+        <img src="https://avatars.githubusercontent.com/u/162943797?v=4" alt="Ishtiaq Hussain" />
+      </div>
+      <div>
+        <h1>Ishtiaq Hussain</h1>
+        <h2>SEO and Meta Ads Specialist</h2>
+        <p>
+          I am an SEO Specialist with experience in digital marketing. I focus on improving online visibility and driving organic traffic for businesses. I have experience in keyword research, on-page and off-page optimization, and data analysis. I keep up with SEO trends to develop solutions that meet client needs.<br><br>
+          Currently, I am pursuing a degree in English, which helps me create content that meets SEO standards and engages audiences. My goal is to combine my technical skills with my background in English to create strategies that improve search engine rankings.
+        </p>
+      </div>
+    </div>
+  </section>
 
-.container { width: min(1100px, 92%); margin-inline: auto; }
+  <!-- Skills Section -->
+  <section class="skills-section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>SEO Tools & Platforms</h3>
+        <ul>
+          <li>Google Search Console</li>
+          <li>SEMrush</li>
+          <li>Ahrefs</li>
+          <li>Screaming Frog</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Digital Marketing & Ads</h3>
+        <ul>
+          <li>Google Ads</li>
+          <li>Meta Ads</li>
+          <li>Facebook Business Manager</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Social Media & Content</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>LinkedIn</li>
+          <li>Content Strategy & Optimization</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Strategy & Analysis</h3>
+        <ul>
+          <li>Keyword Research & Planning</li>
+          <li>On-Page & Off-Page SEO</li>
+          <li>Technical SEO Audits</li>
+          <li>Competitor Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Analytics & Insights</h3>
+        <ul>
+          <li>Google Analytics</li>
+          <li>Meta Insights</li>
+          <li>SEO Performance Reporting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-.site-header {
-  position: sticky; top: 0; backdrop-filter: blur(8px);
-  background: linear-gradient(#0b0f1780, #0b0f1700);
-  z-index: 10;
-}
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-.brand { font-weight: 800; text-decoration: none; color: var(--text); letter-spacing: .2px; }
-.nav-links { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
-.nav-links a { color: var(--muted); text-decoration: none; }
-.nav-links a:hover { color: var(--text); }
-.menu-toggle { display: none; border: 0; background: transparent; font-size: 20px; color: var(--text); }
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-placeholder">
+      <p>Currently no projects to display.</p>
+    </div>
+  </section>
 
-.hero {
-  padding: 80px 0 50px;
-  background: radial-gradient(600px 300px at 90% -20%, #3b82f670, transparent 60%);
-}
-.hero-inner { display: grid; grid-template-columns: 1fr; gap: 28px; }
-h1 { font-size: clamp(32px, 5vw, 52px); margin: 0 0 10px; }
-.lead { color: var(--muted); font-size: 18px; margin: 0 0 16px; }
-.accent { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  <!-- Certification Section -->
+  <section class="certification-section" id="certification">
+    <h2>Certification</h2>
+    <div class="cert-card">
+      <h3>Asian Academy Abbottabad</h3>
+      <p><strong>Jan 2024 - June 2024</strong></p>
+      <p><strong>Grade:</strong> A+</p>
+      <p>
+        I have developed a strong foundation in digital marketing, with a primary focus on Search Engine Optimization (SEO) and Meta Ads.<br>
+        My SEO expertise includes extensive keyword research, on-page optimization, and analytics-driven strategies to enhance organic visibility and drive targeted traffic.<br>
+        Additionally, I have hands-on experience in creating and managing Meta Ads campaigns, targeting capabilities to reach specific audiences effectively.<br>
+        I am passionate about staying updated with the latest trends and best practices in digital marketing, enabling me to deliver measurable results and maximize ROI for businesses.<br>
+        My combined skills make me a valuable asset in the digital marketing landscape.
+      </p>
+    </div>
+  </section>
 
-.section { padding: 40px 0; }
-.section h2 { font-size: 28px; margin: 0 0 16px; }
+  <!-- Education Section -->
+  <section class="education-section" id="education">
+    <h2>Education</h2>
+    <div class="edu-card">
+      <h3>Asian Academy Abbottabad</h3>
+      <p>SEO and Meta Ads Specialist</p>
+    </div>
+  </section>
 
-.tags { display: flex; gap: 10px; flex-wrap: wrap; padding: 0; list-style: none; }
-.tags li {
-  background: var(--panel); border: 1px solid #1c2437; padding: 6px 10px; border-radius: 999px; color: var(--muted);
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid #1c2437;
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin: 16px 0;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.card:hover { transform: translateY(-2px); box-shadow: 0 10px 18px rgba(0,0,0,.25); }
-.card-body { padding: 18px; }
-.card-actions { display: flex; gap: 10px; margin-top: 10px; }
-
-.btn {
-  display: inline-block; padding: 10px 14px; border-radius: 12px;
-  text-decoration: none; color: var(--text); background: #182136; border: 1px solid #223052;
-}
-.btn:hover { filter: brightness(1.1); }
-.btn.primary { background: linear-gradient(90deg, #2563eb, #7c3aed); border: 0; }
-.btn.sm { padding: 8px 10px; font-size: 14px; }
-
-.site-footer { border-top: 1px solid #1c2437; padding: 20px 0 60px; color: var(--muted); text-align: center; }
-
-@media (max-width: 720px) {
-  .menu-toggle { display: inline-block; }
-  .nav-links { display: none; position: absolute; right: 4%; top: 58px; background: var(--panel); padding: 12px; border-radius: 12px; border: 1px solid #1c2437; }
-  .nav-links.show { display: block; }
-}
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Ishtiaq Hussain. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
