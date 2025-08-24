@@ -19,6 +19,11 @@
       --email: #e14a3b;
       --resume: #5e60ce;
       --project: #f48c06;
+      --about-gradient: linear-gradient(90deg, #fdcb52 60%, #ffe5a2 100%);
+      --skills-gradient: linear-gradient(90deg, #25d366 60%, #8ffdcb 100%);
+      --projects-gradient: linear-gradient(90deg, #f48c06 60%, #ffd6a2 100%);
+      --cert-gradient: linear-gradient(90deg, #0a66c2 60%, #88b5e6 100%);
+      --edu-gradient: linear-gradient(90deg, #5e60ce 60%, #b3b5f7 100%);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -26,6 +31,7 @@
       background: var(--secondary);
       color: var(--text);
       line-height: 1.7;
+      min-height: 100vh;
     }
     .navbar {
       background: var(--primary);
@@ -34,6 +40,7 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(38,49,89,0.08);
+      border-bottom: 3px solid var(--accent);
     }
     .navbar-container {
       max-width: 1100px;
@@ -49,6 +56,7 @@
       font-weight: bold;
       letter-spacing: 1px;
       color: var(--accent);
+      text-shadow: 1px 1px 8px #0002;
     }
     .nav-links {
       list-style: none;
@@ -62,6 +70,8 @@
       font-size: 1rem;
       transition: color 0.2s;
       position: relative;
+      padding: 4px 0;
+      letter-spacing: 1px;
     }
     .nav-links a::after {
       content: '';
@@ -87,30 +97,34 @@
     .identity-card {
       background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 100%);
       color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.14);
-      padding: 2rem 2rem 1.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(38,49,89,0.16);
+      padding: 2.5rem 2.2rem 2rem 2.2rem;
       margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
       overflow: hidden;
+      animation: pop-card 0.7s cubic-bezier(.68,-0.55,.27,1.55);
     }
     .identity-card h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.1rem;
-      font-weight: 700;
+      font-size: 2.3rem;
+      font-weight: 800;
       color: #fff;
       margin-bottom: 0.4rem;
+      letter-spacing: 2px;
+      text-shadow: 1px 3px 18px #0003;
     }
     .identity-card h2 {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       color: var(--accent);
       margin-bottom: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       font-weight: 600;
+      text-shadow: 1px 1px 5px #0002;
     }
     /* Contact Buttons Section */
     .contact-row {
@@ -124,18 +138,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: 53px;
+      height: 53px;
       border-radius: 50%;
       background: #fff;
       color: var(--primary);
-      font-size: 1.3rem;
-      box-shadow: 0 1px 8px rgba(38,49,89,0.13);
+      font-size: 1.45rem;
+      box-shadow: 0 2px 18px 2px #0001, 0 1px 8px rgba(38,49,89,0.13);
       transition: box-shadow 0.2s, transform 0.15s, background 0.2s, color 0.2s;
       text-decoration: none;
-      border: 2px solid transparent;
+      border: 2.6px solid transparent;
       outline: none;
       position: relative;
+      cursor: pointer;
     }
     .contact-btn span {
       position: absolute;
@@ -164,26 +179,49 @@
     .btn-project:hover { background: var(--project); color: #fff; }
     .btn-email { border-color: var(--email); color: var(--email);}
     .btn-email:hover { background: var(--email); color: #fff; }
+    .identity-links-bar {
+      margin-top:0.2rem; 
+      font-size:1.01rem; 
+      background:rgba(255,255,255,0.13);
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px 0 #0001;
+      margin-bottom: 0.2rem;
+    }
+    .identity-links-bar a {
+      color: var(--accent);
+      text-decoration:underline;
+      margin:0 10px 0 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.14s;
+    }
+    .identity-links-bar a:hover { color: #fff; }
     /* About Me Section */
     .about-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.07);
+      background: var(--about-gradient);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(253,203,82,0.13);
       padding: 2.2rem 2rem 1.7rem 2rem;
       margin-bottom: 2.2rem;
-      border-left: 6px solid var(--accent);
+      border-left: 7px solid var(--primary);
+      animation: pop-card 0.75s cubic-bezier(.68,-0.55,.27,1.55);
     }
     .about-card h2 {
       font-family: 'Montserrat', sans-serif;
       color: var(--primary);
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 2px 9px #fff8;
     }
     .about-card p {
       color: var(--text);
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 1.09rem;
+      line-height: 1.9;
+      font-weight: 500;
+      letter-spacing: 0.01rem;
     }
     /* Section Headings */
     .section-title {
@@ -193,84 +231,129 @@
       margin-bottom: 1.5rem;
       border-left: 6px solid var(--accent);
       padding-left: 1rem;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 2px 10px #fff7;
     }
     /* Skills Section */
+    .skills-section {
+      background: var(--skills-gradient);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #25d36622;
+      padding: 2.1rem 1.5rem 2.2rem 1.5rem;
+      margin-bottom: 2.2rem;
+      border-left: 7px solid var(--primary);
+      animation: pop-card 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+    }
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.3rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 0.5rem;
     }
     .skill-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
+      background: #fff7;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(38,49,89,0.09);
       padding: 1.2rem 1rem;
-      transition: box-shadow 0.2s;
       border-left: 4px solid var(--accent);
+      transition: box-shadow 0.2s, transform 0.17s;
+      font-weight: 500;
+    }
+    .skill-card:hover {
+      box-shadow: 0 4px 18px #25d36644;
+      transform: translateY(-4px) scale(1.04);
     }
     .skill-card h3 {
       color: var(--primary);
-      font-size: 1rem;
+      font-size: 1.05rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.7px;
     }
     .skill-card ul {
       list-style-type: disc;
       padding-left: 1.2rem;
       color: var(--text);
-      font-size: 0.98rem;
+      font-size: 1.01rem;
     }
     /* Projects Section */
-    .projects-section {
-      margin-bottom: 2rem;
+    .projects-section-bg {
+      background: var(--projects-gradient);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #f48c0622;
+      padding: 2.1rem 1.5rem 2.2rem 1.5rem;
+      margin-bottom: 2.2rem;
+      border-left: 7px solid var(--primary);
+      animation: pop-card 0.85s cubic-bezier(.68,-0.55,.27,1.55);
     }
     .projects-card {
-      background: var(--card-bg);
+      background: #fff7;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
+      box-shadow: 0 2px 8px #f48c0622;
       padding: 1.5rem 1rem;
       text-align: center;
       color: var(--muted);
       font-style: italic;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--primary);
+      font-size: 1.13rem;
+      letter-spacing: 1px;
     }
     /* Certification Section */
+    .cert-section-bg {
+      background: var(--cert-gradient);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #0a66c222;
+      padding: 2.1rem 1.5rem 2.2rem 1.5rem;
+      margin-bottom: 2.2rem;
+      border-left: 7px solid var(--primary);
+      animation: pop-card 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+    }
     .cert-card {
-      background: var(--card-bg);
+      background: #fff9;
       padding: 1.2rem 1rem;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
+      box-shadow: 0 2px 8px #0a66c233;
       margin-bottom: 1.2rem;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--primary);
+      font-size: 1.07rem;
     }
     .cert-card h3 {
       color: var(--primary);
       margin-bottom: 0.3rem;
       font-size: 1.13rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
     .cert-card p {
       color: var(--text);
       margin-bottom: 0.3rem;
-      font-size: 1rem;
+      font-size: 1.01rem;
     }
     /* Education Section */
+    .edu-section-bg {
+      background: var(--edu-gradient);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #5e60ce22;
+      padding: 2.1rem 1.5rem 2.2rem 1.5rem;
+      margin-bottom: 2.2rem;
+      border-left: 7px solid var(--primary);
+      animation: pop-card 0.93s cubic-bezier(.68,-0.55,.27,1.55);
+    }
     .edu-card {
-      background: var(--card-bg);
+      background: #fff9;
       padding: 1.2rem 1rem;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(38,49,89,0.06);
+      box-shadow: 0 2px 8px #5e60ce33;
       margin-bottom: 1.2rem;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--primary);
+      font-size: 1.07rem;
     }
     .edu-card h3 {
       color: var(--primary);
       margin-bottom: 0.2rem;
       font-size: 1.1rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
     /* Footer */
     footer {
@@ -281,6 +364,12 @@
       margin-top: 3rem;
       font-size: 1rem;
       letter-spacing: 1px;
+      border-top: 3px solid var(--accent);
+    }
+    /* Animation */
+    @keyframes pop-card {
+      from { opacity: 0; transform: scale(0.96) translateY(30px);}
+      to { opacity: 1; transform: scale(1) translateY(0);}
     }
     /* Responsive */
     @media (max-width: 900px) {
@@ -290,8 +379,9 @@
       .navbar-container {
         padding: 1rem 1rem;
       }
-      .identity-card, .about-card {
-        padding: 1.5rem 1rem 1rem 1rem;
+      .identity-card, .about-card, .skills-section, .projects-section-bg, .cert-section-bg, .edu-section-bg {
+        padding: 1.1rem 0.7rem 1.1rem 0.7rem;
+        border-radius: 15px;
       }
     }
     @media (max-width: 700px) {
@@ -326,7 +416,7 @@
 
   <div class="container">
     <!-- Name and Profession Section -->
-    <section>
+    <section id="home">
       <div class="identity-card">
         <h1>Ishtiaq Hussain</h1>
         <h2>SEO and Meta Ads Specialist</h2>
@@ -353,19 +443,13 @@
             <span>Email</span>
           </a>
         </div>
-        <div style="margin-top:0.2rem; font-size:0.99rem;">
-          <span style="color:#fff; margin-right:18px;">
-            <i class="fab fa-linkedin-in" style="color:var(--linkedin);"></i> 
-            <a href="https://www.linkedin.com/in/ishtiaqhussain2004" style="color:var(--accent);text-decoration:underline;" target="_blank">LinkedIn</a>
-          </span>
-          <span style="color:#fff; margin-right:18px;">
-            <i class="fas fa-envelope" style="color:var(--email);"></i>
-            <a href="mailto:ishtiaqmalik2004@gmail.com" style="color:var(--accent);text-decoration:underline;">ishtiaqmalik2004@gmail.com</a>
-          </span>
-          <span style="color:#fff;">
-            <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i>
-            <a href="https://wa.me/923073196289" style="color:var(--accent);text-decoration:underline;" target="_blank">0307-3196289</a>
-          </span>
+        <div class="identity-links-bar">
+          <i class="fab fa-linkedin-in" style="color:var(--linkedin);"></i>
+          <a href="https://www.linkedin.com/in/ishtiaqhussain2004" target="_blank">LinkedIn</a>
+          <i class="fas fa-envelope" style="color:var(--email);"></i>
+          <a href="mailto:ishtiaqmalik2004@gmail.com">ishtiaqmalik2004@gmail.com</a>
+          <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i>
+          <a href="https://wa.me/923073196289" target="_blank">0307-3196289</a>
         </div>
       </div>
     </section>
@@ -383,85 +467,93 @@
     
     <!-- Skills Section -->
     <section id="skills">
-      <div class="section-title">Technical Skills</div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>SEO Tools & Platforms</h3>
-          <ul>
-            <li>Google Search Console</li>
-            <li>SEMrush</li>
-            <li>Ahrefs</li>
-            <li>Screaming Frog</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Digital Marketing & Ads</h3>
-          <ul>
-            <li>Google Ads</li>
-            <li>Meta Ads</li>
-            <li>Facebook Business Manager</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Social Media & Content</h3>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>LinkedIn</li>
-            <li>Content Strategy & Optimization</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Strategy & Analysis</h3>
-          <ul>
-            <li>Keyword Research & Planning</li>
-            <li>On-Page & Off-Page SEO</li>
-            <li>Technical SEO Audits</li>
-            <li>Competitor Analysis</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Analytics & Insights</h3>
-          <ul>
-            <li>Google Analytics</li>
-            <li>Meta Insights</li>
-            <li>SEO Performance Reporting</li>
-          </ul>
+      <div class="skills-section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>SEO Tools & Platforms</h3>
+            <ul>
+              <li>Google Search Console</li>
+              <li>SEMrush</li>
+              <li>Ahrefs</li>
+              <li>Screaming Frog</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Digital Marketing & Ads</h3>
+            <ul>
+              <li>Google Ads</li>
+              <li>Meta Ads</li>
+              <li>Facebook Business Manager</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Social Media & Content</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>LinkedIn</li>
+              <li>Content Strategy & Optimization</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Strategy & Analysis</h3>
+            <ul>
+              <li>Keyword Research & Planning</li>
+              <li>On-Page & Off-Page SEO</li>
+              <li>Technical SEO Audits</li>
+              <li>Competitor Analysis</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Analytics & Insights</h3>
+            <ul>
+              <li>Google Analytics</li>
+              <li>Meta Insights</li>
+              <li>SEO Performance Reporting</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <div class="section-title">Projects</div>
-      <div class="projects-card">
-        Currently no projects to display.
+    <section id="projects">
+      <div class="projects-section-bg">
+        <div class="section-title">Projects</div>
+        <div class="projects-card">
+          Currently no projects to display.
+        </div>
       </div>
     </section>
 
     <!-- Certification Section -->
     <section id="certification">
-      <div class="section-title">Certification</div>
-      <div class="cert-card">
-        <h3>Asian Academy Abbottabad</h3>
-        <p><strong>Jan 2024 - June 2024</strong></p>
-        <p><strong>Grade:</strong> A+</p>
-        <p>
-          I have developed a strong foundation in digital marketing, with a primary focus on Search Engine Optimization (SEO) and Meta Ads.<br>
-          My SEO expertise includes extensive keyword research, on-page optimization, and analytics-driven strategies to enhance organic visibility and drive targeted traffic.<br>
-          Additionally, I have hands-on experience in creating and managing Meta Ads campaigns, targeting capabilities to reach specific audiences effectively.<br>
-          I am passionate about staying updated with the latest trends and best practices in digital marketing, enabling me to deliver measurable results and maximize ROI for businesses.<br>
-          My combined skills make me a valuable asset in the digital marketing landscape.
-        </p>
+      <div class="cert-section-bg">
+        <div class="section-title">Certification</div>
+        <div class="cert-card">
+          <h3>Asian Academy Abbottabad</h3>
+          <p><strong>Jan 2024 - June 2024</strong></p>
+          <p><strong>Grade:</strong> A+</p>
+          <p>
+            I have developed a strong foundation in digital marketing, with a primary focus on Search Engine Optimization (SEO) and Meta Ads.<br>
+            My SEO expertise includes extensive keyword research, on-page optimization, and analytics-driven strategies to enhance organic visibility and drive targeted traffic.<br>
+            Additionally, I have hands-on experience in creating and managing Meta Ads campaigns, targeting capabilities to reach specific audiences effectively.<br>
+            I am passionate about staying updated with the latest trends and best practices in digital marketing, enabling me to deliver measurable results and maximize ROI for businesses.<br>
+            My combined skills make me a valuable asset in the digital marketing landscape.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Education Section -->
     <section id="education">
-      <div class="section-title">Education</div>
-      <div class="edu-card">
-        <h3>Asian Academy Abbottabad</h3>
-        <p>SEO and Meta Ads Specialist</p>
+      <div class="edu-section-bg">
+        <div class="section-title">Education</div>
+        <div class="edu-card">
+          <h3>Asian Academy Abbottabad</h3>
+          <p>SEO and Meta Ads Specialist</p>
+        </div>
       </div>
     </section>
   </div>
